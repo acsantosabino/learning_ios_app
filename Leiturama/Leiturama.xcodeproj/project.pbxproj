@@ -13,9 +13,11 @@
 		547CD0E522590F8F0003B8EA /* Leiturama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 547CD0E322590F8F0003B8EA /* Leiturama.xcdatamodeld */; };
 		547CD0E722590F910003B8EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547CD0E622590F910003B8EA /* Assets.xcassets */; };
 		547CD0EA22590F910003B8EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547CD0E822590F910003B8EA /* LaunchScreen.storyboard */; };
+		5F86BE3997803018F3710D02 /* Pods_Leiturama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC3E6A48C417FBA5946EDDE /* Pods_Leiturama.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08547E460482B202D8033A45 /* Pods-Leiturama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leiturama.release.xcconfig"; path = "Target Support Files/Pods-Leiturama/Pods-Leiturama.release.xcconfig"; sourceTree = "<group>"; };
 		547CD0D922590F8F0003B8EA /* Leiturama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leiturama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547CD0DC22590F8F0003B8EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547CD0DE22590F8F0003B8EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		547CD0E622590F910003B8EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		547CD0E922590F910003B8EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		547CD0EB22590F910003B8EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		556D64FB8822C0FC8312C02B /* Pods-Leiturama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leiturama.debug.xcconfig"; path = "Target Support Files/Pods-Leiturama/Pods-Leiturama.debug.xcconfig"; sourceTree = "<group>"; };
+		BBC3E6A48C417FBA5946EDDE /* Pods_Leiturama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leiturama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F86BE3997803018F3710D02 /* Pods_Leiturama.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				547CD0DB22590F8F0003B8EA /* Leiturama */,
 				547CD0DA22590F8F0003B8EA /* Products */,
+				DC6F48DA7487C4A97FDC6A30 /* Pods */,
+				5E9546A51E387638786E1D69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = Leiturama;
 			sourceTree = "<group>";
 		};
+		5E9546A51E387638786E1D69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBC3E6A48C417FBA5946EDDE /* Pods_Leiturama.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC6F48DA7487C4A97FDC6A30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				556D64FB8822C0FC8312C02B /* Pods-Leiturama.debug.xcconfig */,
+				08547E460482B202D8033A45 /* Pods-Leiturama.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 547CD0EE22590F910003B8EA /* Build configuration list for PBXNativeTarget "Leiturama" */;
 			buildPhases = (
+				C192DF5FA67D5EE2D2601123 /* [CP] Check Pods Manifest.lock */,
 				547CD0D522590F8F0003B8EA /* Sources */,
 				547CD0D622590F8F0003B8EA /* Frameworks */,
 				547CD0D722590F8F0003B8EA /* Resources */,
+				A738A04A5763233CC42BE60E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A738A04A5763233CC42BE60E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Leiturama/Pods-Leiturama-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Leiturama/Pods-Leiturama-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C192DF5FA67D5EE2D2601123 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Leiturama-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		547CD0D522590F8F0003B8EA /* Sources */ = {
@@ -284,6 +360,7 @@
 		};
 		547CD0EF22590F910003B8EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 556D64FB8822C0FC8312C02B /* Pods-Leiturama.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +378,7 @@
 		};
 		547CD0F022590F910003B8EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08547E460482B202D8033A45 /* Pods-Leiturama.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
