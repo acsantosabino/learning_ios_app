@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16E93783225929BA0080609C /* TableViewCellBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E93782225929BA0080609C /* TableViewCellBook.swift */; };
 		547CD0DD22590F8F0003B8EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD0DC22590F8F0003B8EA /* AppDelegate.swift */; };
-		547CD0DF22590F8F0003B8EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD0DE22590F8F0003B8EA /* ViewController.swift */; };
+		547CD0DF22590F8F0003B8EA /* ViewControllerBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD0DE22590F8F0003B8EA /* ViewControllerBook.swift */; };
 		547CD0E222590F8F0003B8EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547CD0E022590F8F0003B8EA /* Main.storyboard */; };
 		547CD0E522590F8F0003B8EA /* Leiturama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 547CD0E322590F8F0003B8EA /* Leiturama.xcdatamodeld */; };
 		547CD0E722590F910003B8EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547CD0E622590F910003B8EA /* Assets.xcassets */; };
@@ -18,9 +19,10 @@
 
 /* Begin PBXFileReference section */
 		08547E460482B202D8033A45 /* Pods-Leiturama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leiturama.release.xcconfig"; path = "Target Support Files/Pods-Leiturama/Pods-Leiturama.release.xcconfig"; sourceTree = "<group>"; };
+		16E93782225929BA0080609C /* TableViewCellBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellBook.swift; sourceTree = "<group>"; };
 		547CD0D922590F8F0003B8EA /* Leiturama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leiturama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547CD0DC22590F8F0003B8EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		547CD0DE22590F8F0003B8EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		547CD0DE22590F8F0003B8EA /* ViewControllerBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBook.swift; sourceTree = "<group>"; };
 		547CD0E122590F8F0003B8EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		547CD0E422590F8F0003B8EA /* Leiturama.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Leiturama.xcdatamodel; sourceTree = "<group>"; };
 		547CD0E622590F910003B8EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,12 +66,13 @@
 			isa = PBXGroup;
 			children = (
 				547CD0DC22590F8F0003B8EA /* AppDelegate.swift */,
-				547CD0DE22590F8F0003B8EA /* ViewController.swift */,
+				547CD0DE22590F8F0003B8EA /* ViewControllerBook.swift */,
 				547CD0E022590F8F0003B8EA /* Main.storyboard */,
 				547CD0E622590F910003B8EA /* Assets.xcassets */,
 				547CD0E822590F910003B8EA /* LaunchScreen.storyboard */,
 				547CD0EB22590F910003B8EA /* Info.plist */,
 				547CD0E322590F8F0003B8EA /* Leiturama.xcdatamodeld */,
+				16E93782225929BA0080609C /* TableViewCellBook.swift */,
 			);
 			path = Leiturama;
 			sourceTree = "<group>";
@@ -213,7 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				547CD0DF22590F8F0003B8EA /* ViewController.swift in Sources */,
+				16E93783225929BA0080609C /* TableViewCellBook.swift in Sources */,
+				547CD0DF22590F8F0003B8EA /* ViewControllerBook.swift in Sources */,
 				547CD0E522590F8F0003B8EA /* Leiturama.xcdatamodeld in Sources */,
 				547CD0DD22590F8F0003B8EA /* AppDelegate.swift in Sources */,
 			);
