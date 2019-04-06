@@ -63,6 +63,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="outletImage" destination="DbQ-Wl-W88" id="CMR-II-L5v"/>
+                        <outlet property="outletLabel" destination="Y2y-IH-SPR" id="c7b-p7-2KV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,9 @@ import UIKit
 
 class ViewControllerBook: UIViewController {
     
+    @IBOutlet weak var outletImage: UIImageView!
+    @IBOutlet weak var outletLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
