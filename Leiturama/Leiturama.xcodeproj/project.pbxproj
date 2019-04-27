@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		162154C32274F956000B8948 /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162154C22274F956000B8948 /* BooksTableViewController.swift */; };
+		162154C52274FC8F000B8948 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162154C42274FC8F000B8948 /* BookTableViewCell.swift */; };
 		547CD0DD22590F8F0003B8EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD0DC22590F8F0003B8EA /* AppDelegate.swift */; };
 		547CD0E222590F8F0003B8EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547CD0E022590F8F0003B8EA /* Main.storyboard */; };
 		547CD0E522590F8F0003B8EA /* Leiturama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 547CD0E322590F8F0003B8EA /* Leiturama.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		08547E460482B202D8033A45 /* Pods-Leiturama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leiturama.release.xcconfig"; path = "Target Support Files/Pods-Leiturama/Pods-Leiturama.release.xcconfig"; sourceTree = "<group>"; };
 		162154C22274F956000B8948 /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
+		162154C42274FC8F000B8948 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		547CD0D922590F8F0003B8EA /* Leiturama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leiturama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547CD0DC22590F8F0003B8EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547CD0E122590F8F0003B8EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				547CD0DC22590F8F0003B8EA /* AppDelegate.swift */,
 				162154C22274F956000B8948 /* BooksTableViewController.swift */,
+				162154C42274FC8F000B8948 /* BookTableViewCell.swift */,
 				547CD0E022590F8F0003B8EA /* Main.storyboard */,
 				547CD0E622590F910003B8EA /* Assets.xcassets */,
 				547CD0E822590F910003B8EA /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162154C52274FC8F000B8948 /* BookTableViewCell.swift in Sources */,
 				547CD0E522590F8F0003B8EA /* Leiturama.xcdatamodeld in Sources */,
 				547CD0DD22590F8F0003B8EA /* AppDelegate.swift in Sources */,
 				162154C32274F956000B8948 /* BooksTableViewController.swift in Sources */,
