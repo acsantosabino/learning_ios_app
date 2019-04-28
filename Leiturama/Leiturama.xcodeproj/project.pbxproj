@@ -15,6 +15,7 @@
 		547CD0E522590F8F0003B8EA /* Leiturama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 547CD0E322590F8F0003B8EA /* Leiturama.xcdatamodeld */; };
 		547CD0E722590F910003B8EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547CD0E622590F910003B8EA /* Assets.xcassets */; };
 		547CD0EA22590F910003B8EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547CD0E822590F910003B8EA /* LaunchScreen.storyboard */; };
+		54CE2A912275100E00346DF1 /* BookRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE2A902275100E00346DF1 /* BookRegisterViewController.swift */; };
 		5F86BE3997803018F3710D02 /* Pods_Leiturama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC3E6A48C417FBA5946EDDE /* Pods_Leiturama.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		547CD0E622590F910003B8EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		547CD0E922590F910003B8EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		547CD0EB22590F910003B8EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54CE2A8C22750FAE00346DF1 /* Leiturama-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Leiturama-Bridging-Header.h"; sourceTree = "<group>"; };
+		54CE2A902275100E00346DF1 /* BookRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRegisterViewController.swift; sourceTree = "<group>"; };
 		556D64FB8822C0FC8312C02B /* Pods-Leiturama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leiturama.debug.xcconfig"; path = "Target Support Files/Pods-Leiturama/Pods-Leiturama.debug.xcconfig"; sourceTree = "<group>"; };
 		BBC3E6A48C417FBA5946EDDE /* Pods_Leiturama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leiturama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +79,8 @@
 				547CD0EB22590F910003B8EA /* Info.plist */,
 				547CD0E322590F8F0003B8EA /* Leiturama.xcdatamodeld */,
 				164742BB227535BF00C1FF5D /* Images.xcassets */,
+				54CE2A8C22750FAE00346DF1 /* Leiturama-Bridging-Header.h */,
+				54CE2A902275100E00346DF1 /* BookRegisterViewController.swift */,
 			);
 			path = Leiturama;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				TargetAttributes = {
 					547CD0D822590F8F0003B8EA = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -224,6 +230,7 @@
 				547CD0E522590F8F0003B8EA /* Leiturama.xcdatamodeld in Sources */,
 				547CD0DD22590F8F0003B8EA /* AppDelegate.swift in Sources */,
 				162154C32274F956000B8948 /* BooksTableViewController.swift in Sources */,
+				54CE2A912275100E00346DF1 /* BookRegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 556D64FB8822C0FC8312C02B /* Pods-Leiturama.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Leiturama/Info.plist;
@@ -379,6 +387,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = aluno.Leiturama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Leiturama/Leiturama-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -388,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 08547E460482B202D8033A45 /* Pods-Leiturama.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Leiturama/Info.plist;
@@ -398,6 +409,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = aluno.Leiturama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Leiturama/Leiturama-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

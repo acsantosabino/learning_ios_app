@@ -86,7 +86,7 @@
         <!--Cadastro-->
         <scene sceneID="xji-DW-KNz">
             <objects>
-                <viewController id="P4G-Rj-TBL" customClass="ViewControllerBook" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P4G-Rj-TBL" customClass="BookRegisterViewController" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="btq-nY-AEt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,15 +139,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de publicação" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9q-ft-Aux">
-                                        <rect key="frame" x="17" y="466" width="165" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="165" id="8r3-Tv-RTk"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E0-4Y-Q79">
                                         <rect key="frame" x="136.5" y="609" width="102" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -158,6 +149,15 @@
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de publicação" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9q-ft-Aux">
+                                        <rect key="frame" x="17" y="466" width="165" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="8r3-Tv-RTk"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="N9q-ft-Aux" firstAttribute="leading" secondItem="pa8-AP-Jae" secondAttribute="leading" id="5N3-Re-3zj"/>
@@ -199,7 +199,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g7a-MS-IAG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cadastro" image="record50" id="yaM-rX-Gju"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8z-BZ-Khn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
