@@ -32,20 +32,23 @@ class BookRegisterViewController: UIViewController {
     
     func parseJSON() {
         self.book = Book(context: context)
-        Alamofire.request("https://www.googleapis.com/books/v1/volumes?q=9788578274085+isbn").responseJSON{
+        Alamofire.request("https://www.googleapis.com/books/v1/volumes?q=9788580631036+isbn").responseJSON{
             response in
             
             if let json = response.result.value as? [String:Any]
             {
                 if let items = json["items"] as? [[String:Any]],
                     let volumeInfo = items[0]["volumeInfo"] as? [String:Any] {
-//                    print(volumeInfo)
+                    print(volumeInfo)
                     if let isbnArray = volumeInfo["industryIdentifiers"] as? [[String:Any]],
                     let isbn = isbnArray[0]["identifier"] as? String {
                         self.book.isbn = isbn
                     }
                     if let titulo = volumeInfo["title"] as? String {
                         self.vrTitulo.text = titulo
+                        if let subtitulo = volumeInfo["subtitle"] as? String {
+                            self.vrTitulo.text = "\(titulo): \(subtitulo)"
+                        }
                     }
                     if let autores = volumeInfo["authors"] as? [String] {
                         var aux: String = ""

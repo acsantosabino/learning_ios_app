@@ -14,14 +14,15 @@
         <scene sceneID="o9d-14-8RS">
             <objects>
                 <tabBarController id="4Es-GZ-K08" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jrD-pT-jZb">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jrD-pT-jZb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="P4G-Rj-TBL" kind="relationship" relationship="viewControllers" id="S19-FE-mPq"/>
                         <segue destination="GrB-eG-iuG" kind="relationship" relationship="viewControllers" id="BPn-Xp-I3I"/>
+                        <segue destination="P4G-Rj-TBL" kind="relationship" relationship="viewControllers" id="RFi-tR-XAA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxz-iP-6uH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -36,6 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tdv-x0-Xen"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" rowHeight="120" id="PaL-DP-tx1" customClass="BookTableViewCell" customModule="Leiturama" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
@@ -77,13 +79,13 @@
                             <outlet property="delegate" destination="GrB-eG-iuG" id="JQr-wn-HyS"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Biblioteca" image="library50" id="Eak-hm-xvR"/>
+                    <tabBarItem key="tabBarItem" title="Biblioteca" image="libraryIcon" springLoaded="YES" id="Eak-hm-xvR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqO-s3-69u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="174" y="-216"/>
         </scene>
-        <!--Book Register View Controller-->
+        <!--Novo Livro-->
         <scene sceneID="xji-DW-KNz">
             <objects>
                 <viewController id="P4G-Rj-TBL" customClass="BookRegisterViewController" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,7 +164,7 @@
                                         </state>
                                         <connections>
                                             <action selector="addBook:" destination="P4G-Rj-TBL" eventType="touchUpInside" id="LSr-Bd-3ix"/>
-                                            <segue destination="GrB-eG-iuG" kind="show" id="BfK-cs-NVt"/>
+                                            <segue destination="4Es-GZ-K08" kind="show" id="cY9-Xg-gMa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -206,6 +208,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g7a-MS-IAG"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Novo Livro" image="recordIcon" id="gdX-nf-wJf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="vrAutores" destination="ZaM-Uh-d7E" id="f28-zx-Ee4"/>
                         <outlet property="vrBookCover" destination="TDQ-Y8-nr5" id="uwE-xa-izJ"/>
@@ -224,9 +228,7 @@
     </scenes>
     <resources>
         <image name="cover_unknown" width="360" height="477"/>
-        <image name="library50" width="50" height="50"/>
+        <image name="libraryIcon" width="25" height="25"/>
+        <image name="recordIcon" width="25" height="23"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="BfK-cs-NVt"/>
-    </inferredMetricsTieBreakers>
 </document>
