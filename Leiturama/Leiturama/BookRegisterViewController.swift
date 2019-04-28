@@ -20,7 +20,7 @@ class BookRegisterViewController: UIViewController {
     @IBOutlet weak var vrCategorias: UITextField!
     @IBOutlet weak var vrPublicacaoData: UITextField!
     @IBOutlet weak var vrNumPaginas: UITextField!
-    @IBOutlet weak var vrSinopse: UITextField!
+    @IBOutlet weak var vrSinopse: UITextView!
     
     var book: Book!
     
@@ -39,7 +39,7 @@ class BookRegisterViewController: UIViewController {
             {
                 if let items = json["items"] as? [[String:Any]],
                     let volumeInfo = items[0]["volumeInfo"] as? [String:Any] {
-                    print(volumeInfo)
+//                    print(volumeInfo)
                     if let isbnArray = volumeInfo["industryIdentifiers"] as? [[String:Any]],
                     let isbn = isbnArray[0]["identifier"] as? String {
                         self.book.isbn = isbn
@@ -63,8 +63,8 @@ class BookRegisterViewController: UIViewController {
                     if let sinopse = volumeInfo["description"] as? String {
                         self.vrSinopse.text = sinopse
                     }
-                    if let numPaginas = volumeInfo["pageCount"] as? String {
-                        self.vrNumPaginas.text = numPaginas
+                    if let numPaginas = volumeInfo["pageCount"] as? Int {
+                        self.vrNumPaginas.text = String(numPaginas)
                     }
                     if let categorias = volumeInfo["categories"] as? [String] {
                         var aux1: String = ""
