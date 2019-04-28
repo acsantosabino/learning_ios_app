@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import Alamofire
 import AlamofireImage
 
@@ -23,71 +24,133 @@ class BookRegisterViewController: UIViewController {
     
     var book: Book!
     
+    var context:NSManagedObjectContext
+    {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
     func parseJSON() {
+        self.book = Book(context: context)
         Alamofire.request("https://www.googleapis.com/books/v1/volumes?q=9788578274085+isbn").responseJSON{
             response in
             
             if let json = response.result.value as? [String:Any]
             {
-                if let volumeInfo = json["items"]["volumeInfo"] as? [String:Any] {
-                    if let isbn = volumeInfo["identifier"] as String {
-                        book.isbn = isbn
+                if let items = json["items"] as? [[String:Any]],
+                    let volumeInfo = items[0]["volumeInfo"] as? [String:Any] {
+                    print(volumeInfo)
+                    if let isbnArray = volumeInfo["industryIdentifiers"] as? [[String:Any]],
+                    let isbn = isbnArray[0]["identifier"] as? String {
+                        self.book.isbn = isbn
                     }
-                    if let titulo = volumeInfo["title"] as String {
-                        book.title = titulo
+                    if let titulo = volumeInfo["title"] as? String {
+                        self.vrTitulo.text = titulo
                     }
-                    if let autores = volumeInfo["authors"] as [String] {
-                        book.author = ""
+                    if let autores = volumeInfo["authors"] as? [String] {
+                        var aux: String = ""
                         for autor in autores {
-                            book.author += "\(autores), "
+                            aux += "\(autor), "
                         }
-                        book.author = book.author?.dropLast(2)
+                        self.vrAutores.text = String(aux.dropLast(2))
                     }
-                    if let editora = volumeInfo["publisher"] as String {
-                        book.publisher = editora
+                    if let editora = volumeInfo["publisher"] as? String {
+                        self.vrEditora.text = editora
                     }
-                    if let publicacaoData = volumeInfo["publishedDate"] as String {
-                        book.publishedDate = publicacaoData
+                    if let publicacaoData = volumeInfo["publishedDate"] as? String {
+                        self.vrPublicacaoData.text = publicacaoData
                     }
-                    if let sinopse = volumeInfo["description"] as String {
-                        book.description = sinopse
+                    if let sinopse = volumeInfo["description"] as? String {
+                        self.vrSinopse.text = sinopse
                     }
-                    if let numPaginas = volumeInfo["pageCount"] as NSString {
-                        book.pageCount = numPaginas.intValue
+                    if let numPaginas = volumeInfo["pageCount"] as? String {
+                        self.vrNumPaginas.text = numPaginas
                     }
-                    if let categorias = volumeInfo["categories"] as [String] {
-                        book.categories = ""
+                    if let categorias = volumeInfo["categories"] as? [String] {
+                        var aux1: String = ""
                         for categoria in categorias {
-                            book.categories += "\(categoria), "
+                            aux1 += "\(categoria), "
                         }
-                        book.categories = book.categories?.dropLast(2)
+                        self.vrCategorias.text = String(aux1.dropLast(2))
                     }
- 
+                    if let imageLinks = volumeInfo["imageLinks"] as? [String:Any],
+                        let cover = imageLinks["thumbnail"] as? String {
+                        Alamofire.request(cover).responseImage { response in
+                            
+                            if let image = response.result.value {
+                                print("image downloaded: \(image)")
+                                self.vrBookCover.image = image
+                            }
+                        }
+                        
+                    }
+                    
                 }
             }
         }
     }
     
-    view
+    func fillView(){
+        print(self.book)
+        
+        if let cover = self.book.cover as? UIImage{
+            vrBookCover.image = cover
+        }
+        if self.book.title != nil{
+            vrTitulo.text = self.book.title
+        }
+        if self.book.author != nil{
+            vrAutores.text = self.book.author
+        }
+        if self.book.publishedDate != nil{
+            vrEditora.text = self.book.publisher
+        }
+        if self.book.categories != nil{
+            vrCategorias.text = self.book.categories
+        }
+        if self.book.publishedDate != nil{
+            vrPublicacaoData.text = self.book.publishedDate
+        }
+        //        if self.book.pageCount != nil{
+        //            vrNumPaginas.text = String(self.book.pageCount)
+        //        }
+        if self.book.sinopse != nil{
+            vrSinopse.text = self.book.sinopse
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Parse Json")
+        parseJSON()
 
         // Do any additional setup after loading the view.
-        parseJSON()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
-        vrBookCover.image = UIImage(book.cover)
-        vrTitulo.text = book.title
-        vrAutores.text = book.author
-        vrEditora.text = book.publisher
-        vrCategorias.text = book.categories
-        vrPublicacaoData.text = book.publishedDate
-        vrNumPaginas.text = String(book.pageCount)
-        vrSinopse.text = book.description
         super.viewWillAppear(animated)
     }
+    
+    @IBAction func addBook(_ sender: Any) {
+        self.book = Book(context:context)
+        
+        //PREENCHE OS DADOS DO MODELO
+        book.cover = vrBookCover.image
+        book.title = vrTitulo.text
+        book.author = vrAutores.text
+        book.publisher = vrEditora.text
+        book.categories = vrCategorias.text
+        book.publishedDate = vrPublicacaoData.text
+        book.pageCount = NSString(string: vrNumPaginas.text!).intValue
+        book.sinopse = vrSinopse.text
+        
+        do{
+            try context.save()
+        }
+        catch{}
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+
 
 }

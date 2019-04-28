@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Es-GZ-K08">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Es-GZ-K08">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="174" y="-216"/>
         </scene>
-        <!--Cadastro-->
+        <!--Book Register View Controller-->
         <scene sceneID="xji-DW-KNz">
             <objects>
                 <viewController id="P4G-Rj-TBL" customClass="BookRegisterViewController" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
@@ -113,7 +113,7 @@
                                         <rect key="frame" x="192" y="466" width="165" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sinopse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-AP-Jae">
                                         <rect key="frame" x="17" y="511" width="340" height="30"/>
@@ -139,16 +139,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E0-4Y-Q79">
-                                        <rect key="frame" x="136.5" y="609" width="102" height="30"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="102" id="GcD-2t-DZi"/>
-                                        </constraints>
-                                        <state key="normal" title="Salvar">
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de publicação" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9q-ft-Aux">
                                         <rect key="frame" x="17" y="466" width="165" height="30"/>
                                         <constraints>
@@ -158,6 +148,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E0-4Y-Q79">
+                                        <rect key="frame" x="136.5" y="609" width="102" height="30"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="GcD-2t-DZi"/>
+                                        </constraints>
+                                        <state key="normal" title="Salvar">
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addBook:" destination="P4G-Rj-TBL" eventType="touchUpInside" id="LSr-Bd-3ix"/>
+                                            <segue destination="GrB-eG-iuG" kind="show" id="BfK-cs-NVt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="N9q-ft-Aux" firstAttribute="leading" secondItem="pa8-AP-Jae" secondAttribute="leading" id="5N3-Re-3zj"/>
@@ -199,6 +203,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g7a-MS-IAG"/>
                     </view>
+                    <connections>
+                        <outlet property="vrAutores" destination="ZaM-Uh-d7E" id="f28-zx-Ee4"/>
+                        <outlet property="vrBookCover" destination="TDQ-Y8-nr5" id="uwE-xa-izJ"/>
+                        <outlet property="vrCategorias" destination="Rtd-Jc-C7r" id="6tR-4p-iIk"/>
+                        <outlet property="vrEditora" destination="4KJ-16-tzf" id="kiW-Cj-LVP"/>
+                        <outlet property="vrNumPaginas" destination="K6B-Pc-Dqc" id="kFn-wY-jMH"/>
+                        <outlet property="vrPublicacaoData" destination="N9q-ft-Aux" id="0lc-84-0m6"/>
+                        <outlet property="vrSinopse" destination="pa8-AP-Jae" id="2oM-0p-1R6"/>
+                        <outlet property="vrTitulo" destination="YPh-lG-hwk" id="AZ2-Qa-Sa1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8z-BZ-Khn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,6 +222,8 @@
     <resources>
         <image name="cover_unknown" width="360" height="477"/>
         <image name="library50" width="50" height="50"/>
-        <image name="record50" width="50" height="46"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BPn-Xp-I3I"/>
+    </inferredMetricsTieBreakers>
 </document>
