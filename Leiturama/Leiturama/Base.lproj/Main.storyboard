@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Es-GZ-K08">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Books Table View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="o9d-14-8RS">
+            <objects>
+                <tabBarController id="4Es-GZ-K08" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jrD-pT-jZb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="P4G-Rj-TBL" kind="relationship" relationship="viewControllers" id="S19-FE-mPq"/>
+                        <segue destination="GrB-eG-iuG" kind="relationship" relationship="viewControllers" id="BPn-Xp-I3I"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rxz-iP-6uH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1065" y="283"/>
+        </scene>
+        <!--Biblioteca-->
         <scene sceneID="c5Z-rd-bo5">
             <objects>
                 <tableViewController id="GrB-eG-iuG" customClass="BooksTableViewController" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,12 +77,13 @@
                             <outlet property="delegate" destination="GrB-eG-iuG" id="JQr-wn-HyS"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Biblioteca" image="library50" id="Eak-hm-xvR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqO-s3-69u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="174" y="-216"/>
         </scene>
-        <!--View Controller Book-->
+        <!--Cadastro-->
         <scene sceneID="xji-DW-KNz">
             <objects>
                 <viewController id="P4G-Rj-TBL" customClass="ViewControllerBook" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-tO-uXe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover_unknown" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TDQ-Y8-nr5">
                                         <rect key="frame" x="88" y="8" width="199" height="250"/>
@@ -180,6 +199,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g7a-MS-IAG"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Cadastro" image="record50" id="yaM-rX-Gju"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8z-BZ-Khn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,5 +208,7 @@
     </scenes>
     <resources>
         <image name="cover_unknown" width="360" height="477"/>
+        <image name="library50" width="50" height="50"/>
+        <image name="record50" width="50" height="46"/>
     </resources>
 </document>
