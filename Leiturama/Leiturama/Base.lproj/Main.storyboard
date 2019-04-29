@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Es-GZ-K08">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Es-GZ-K08">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-1065" y="283"/>
         </scene>
-        <!--Biblioteca-->
+        <!--Books Table View Controller-->
         <scene sceneID="c5Z-rd-bo5">
             <objects>
                 <tableViewController id="GrB-eG-iuG" customClass="BooksTableViewController" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,13 +79,13 @@
                             <outlet property="delegate" destination="GrB-eG-iuG" id="JQr-wn-HyS"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Biblioteca" image="libraryIcon" springLoaded="YES" id="Eak-hm-xvR"/>
+                    <tabBarItem key="tabBarItem" title="" image="books" id="Eak-hm-xvR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqO-s3-69u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="174" y="-216"/>
         </scene>
-        <!--Novo Livro-->
+        <!--Book Register View Controller-->
         <scene sceneID="xji-DW-KNz">
             <objects>
                 <viewController id="P4G-Rj-TBL" customClass="BookRegisterViewController" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
@@ -226,7 +226,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g7a-MS-IAG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Novo Livro" image="recordIcon" id="gdX-nf-wJf"/>
+                    <tabBarItem key="tabBarItem" title="" image="bookAddition" id="gdX-nf-wJf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="vrAutores" destination="ZaM-Uh-d7E" id="f28-zx-Ee4"/>
@@ -246,8 +246,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bookAddition" width="30" height="30"/>
+        <image name="books" width="30" height="30"/>
         <image name="cover_unknown" width="360" height="477"/>
-        <image name="libraryIcon" width="25" height="25"/>
-        <image name="recordIcon" width="25" height="23"/>
     </resources>
 </document>
