@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class BooksTableViewController: UITableViewController {
-    var books: [String] = []
+    var books: [Book] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,24 @@ class BooksTableViewController: UITableViewController {
     }
     
     func loadData(){
-        books = ["Biblia Sagrada", "O impostor que vive em mim"]
+        //books = ["Biblia Sagrada", "O impostor que vive em mim"]
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        let fetchRequest =
+            NSFetchRequest<NSFetchRequestResult>(entityName: "Book")
+        //978-0553103540
+        do{
+            let result = try managedContext.fetch(fetchRequest)
+            print(result.count)
+            if(result.count>0){
+                books = result as! [Book]
+            }
+        }catch{
+            print("Failed")
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,7 +52,8 @@ class BooksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as! BookTableViewCell
-        cell.setBookInfo(image: #imageLiteral(resourceName: "cruz"), titulo: books[indexPath.row])
+        let book = books[indexPath.row]
+        cell.setBookInfo(image: #imageLiteral(resourceName: "cruz"), titulo: book.title!)
         return cell
     }
     
