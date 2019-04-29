@@ -42,12 +42,28 @@ class BookEditionViewController: UIViewController {
         //978-0553103540
         do{
             let result = try managedContext.fetch(fetchRequest)
-            let bookToUpdate = result[index] as! Book
-            
+            let book = result[index] as! Book
+            book.isbn = vrISBN.text
+            book.cover = vrBookCover.image
+            book.title = vrTitulo.text
+            book.author = vrAutores.text
+            book.publisher = vrEditora.text
+            book.categories = vrCategorias.text
+            book.publishedDate = vrPublicacaoData.text
+            book.pageCount = NSString(string: vrNumPaginas.text!).intValue
+            book.sinopse = vrSinopse.text
+            do{
+                try managedContext.save()
+            } catch {
+                print(error)
+            }
         }catch{
             print("Failed")
         }
         
+    }
+    @IBAction func editBook(_ sender: Any) {
+        updateBook()
     }
     /*
      // MARK: - Navigation

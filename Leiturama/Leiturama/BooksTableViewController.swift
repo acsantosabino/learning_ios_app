@@ -88,6 +88,17 @@ class BooksTableViewController: UITableViewController {
         performSegue(withIdentifier: "segueBookEdition", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.destination is BookEditionViewController
+        {
+            let vc = segue.destination as? BookEditionViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                vc?.index = indexPath.row
+            }
+        }
+    }
+    
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         
         if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {

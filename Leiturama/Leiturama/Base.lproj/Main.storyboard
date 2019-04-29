@@ -344,6 +344,7 @@
                                         </state>
                                         <connections>
                                             <action selector="addBook:" destination="P4G-Rj-TBL" eventType="touchUpInside" id="AE4-IM-3Qt"/>
+                                            <action selector="editBook:" destination="UqS-uu-vfE" eventType="touchUpInside" id="h39-za-f6k"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ISBN" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6xU-fi-7YO" userLabel="Vr ISBN">
