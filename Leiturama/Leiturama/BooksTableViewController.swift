@@ -14,6 +14,9 @@ class BooksTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // tapRecognizer, placed in viewDidLoad
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress(longPressGestureRecognizer:)))
+        self.view.addGestureRecognizer(longPressRecognizer)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +43,27 @@ class BooksTableViewController: UITableViewController {
             print("Failed")
         }
     }
+    
+    func removeIntem(index: Int){
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        let itemToDelete = books[index] as NSManagedObject
+        
+        managedContext.delete(itemToDelete)
+        do{
+            try managedContext.save()
+            
+        } catch{
+            print("Failed")
+        }
+        
+    }
+    func refresh(){
+        loadData()
+        self.tableView.reloadData()
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -62,5 +86,26 @@ class BooksTableViewController: UITableViewController {
                    didSelectRowAt indexPath: IndexPath){
         print(books[indexPath.row])
     }
-
+    
+    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
+            
+            let touchPoint = longPressGestureRecognizer.location(in: self.tableView)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                let book = books[indexPath.row]
+                // create the alert
+                let alert = UIAlertController(title: "Delete", message: "O livro \(book.title!.uppercased()) sera removido", preferredStyle: UIAlertController.Style.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+                    self.removeIntem(index: indexPath.row)
+                    self.refresh()
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)                // your code here, get the row for the indexPath or do whatever you want
+            }
+        }
+    }
+    
 }
