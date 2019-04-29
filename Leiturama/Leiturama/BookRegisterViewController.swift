@@ -23,7 +23,6 @@ class BookRegisterViewController: UIViewController {
     @IBOutlet weak var vrNumPaginas: UITextField!
     @IBOutlet weak var vrSinopse: UITextView!
     
-    var book: Book!
     
     var context:NSManagedObjectContext
     {
@@ -106,7 +105,7 @@ class BookRegisterViewController: UIViewController {
     }
     
     @IBAction func addBook(_ sender: Any) {
-        self.book = Book(context:context)
+        let book = NSEntityDescription.insertNewObject(forEntityName: "Book", into: context) as! Book
         
         //PREENCHE OS DADOS DO MODELO
         book.isbn = vrISBN.text
@@ -118,13 +117,12 @@ class BookRegisterViewController: UIViewController {
         book.publishedDate = vrPublicacaoData.text
         book.pageCount = NSString(string: vrNumPaginas.text!).intValue
         book.sinopse = vrSinopse.text
-        context.insert(book)
-//        do{
-//            try context.insert(book)
-//        }
-//        catch{}
         
-        self.dismiss(animated: true, completion: nil)
+        do{
+            try context.save()
+        }
+        catch{}
+        
     }
 
 

@@ -53,7 +53,8 @@ class BooksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as! BookTableViewCell
         let book = books[indexPath.row]
-        cell.setBookInfo(image: #imageLiteral(resourceName: "cruz"), titulo: book.title!)
+        let cover = book.cover as! UIImage
+        cell.setBookInfo(image: cover, titulo: book.title!)
         return cell
     }
     
