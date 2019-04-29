@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Es-GZ-K08">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -34,16 +34,16 @@
             <objects>
                 <tableViewController id="GrB-eG-iuG" customClass="BooksTableViewController" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Slx-XI-jcb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Tdv-x0-Xen"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" rowHeight="120" id="PaL-DP-tx1" customClass="BookTableViewCell" customModule="Leiturama" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PaL-DP-tx1" id="3JN-CC-qqP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iS-bK-pSW">
@@ -54,7 +54,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tA9-zS-75Y">
-                                            <rect key="frame" x="120" y="49.5" width="229" height="21"/>
+                                            <rect key="frame" x="120" y="49.5" width="174" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -90,20 +90,20 @@
             <objects>
                 <viewController id="P4G-Rj-TBL" customClass="BookRegisterViewController" customModule="Leiturama" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="btq-nY-AEt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-tO-uXe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover_unknown" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TDQ-Y8-nr5">
-                                        <rect key="frame" x="88" y="8" width="199" height="250"/>
+                                        <rect key="frame" x="88" y="-10" width="144" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="g69-Pa-KHA"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Título" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-lG-hwk" userLabel="Titulo">
-                                        <rect key="frame" x="17" y="266" width="340" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-lG-hwk" userLabel="Titulo">
+                                        <rect key="frame" x="15" y="279" width="290" height="30"/>
                                         <accessibility key="accessibilityConfiguration" label="Titulo">
                                             <accessibilityTraits key="traits" keyboardKey="YES"/>
                                         </accessibility>
@@ -111,41 +111,38 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número de páginas" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6B-Pc-Dqc">
-                                        <rect key="frame" x="192" y="466" width="165" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número de páginas" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6B-Pc-Dqc">
+                                        <rect key="frame" x="170.5" y="439" width="134.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Autores" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZaM-Uh-d7E">
-                                        <rect key="frame" x="17" y="315" width="340" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Autores" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZaM-Uh-d7E">
+                                        <rect key="frame" x="15" y="319" width="290" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Editota" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4KJ-16-tzf">
-                                        <rect key="frame" x="17" y="364" width="340" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Editota" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4KJ-16-tzf">
+                                        <rect key="frame" x="15" y="359" width="290" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rtd-Jc-C7r">
-                                        <rect key="frame" x="17" y="411" width="340" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rtd-Jc-C7r">
+                                        <rect key="frame" x="15" y="399" width="290" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data de publicação" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9q-ft-Aux">
-                                        <rect key="frame" x="17" y="466" width="165" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="165" id="8r3-Tv-RTk"/>
-                                        </constraints>
+                                        <rect key="frame" x="15" y="439" width="145.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Sinopse" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="OLD-W9-pR4">
-                                        <rect key="frame" x="16" y="519" width="343" height="33"/>
+                                        <rect key="frame" x="15" y="479" width="290" height="33"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Kvb-W3-rEZ"/>
@@ -153,8 +150,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E0-4Y-Q79">
-                                        <rect key="frame" x="136" y="560" width="102" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E0-4Y-Q79">
+                                        <rect key="frame" x="109" y="523" width="102" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="102" id="GcD-2t-DZi"/>
@@ -167,35 +164,56 @@
                                             <segue destination="4Es-GZ-K08" kind="show" id="cY9-Xg-gMa"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ISBN" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJT-qf-5Fi" userLabel="Vr ISBN">
+                                        <rect key="frame" x="15" y="239" width="290" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" label="Titulo">
+                                            <accessibilityTraits key="traits" keyboardKey="YES"/>
+                                        </accessibility>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="handleISBN:" destination="P4G-Rj-TBL" eventType="editingChanged" id="m9u-Pu-M5A"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="4KJ-16-tzf" firstAttribute="centerX" secondItem="8Dk-tO-uXe" secondAttribute="centerX" id="0uR-oS-rxX"/>
                                     <constraint firstItem="OLD-W9-pR4" firstAttribute="centerX" secondItem="8Dk-tO-uXe" secondAttribute="centerX" id="1Pl-ix-5R5"/>
-                                    <constraint firstItem="4KJ-16-tzf" firstAttribute="trailing" secondItem="Rtd-Jc-C7r" secondAttribute="trailing" id="7C3-5N-buT"/>
+                                    <constraint firstAttribute="trailing" secondItem="OLD-W9-pR4" secondAttribute="trailing" constant="15" id="2np-fV-Nwp"/>
+                                    <constraint firstItem="gJT-qf-5Fi" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="15" id="3st-jx-mdc"/>
+                                    <constraint firstAttribute="trailing" secondItem="4KJ-16-tzf" secondAttribute="trailing" constant="15" id="53v-sW-j26"/>
+                                    <constraint firstAttribute="trailing" secondItem="K6B-Pc-Dqc" secondAttribute="trailing" constant="15" id="6pD-uP-Ode"/>
+                                    <constraint firstItem="4KJ-16-tzf" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="15" id="7Ip-KV-0Kp"/>
+                                    <constraint firstItem="ZaM-Uh-d7E" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="15" id="Aw1-KO-xqZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="gJT-qf-5Fi" secondAttribute="trailing" constant="15" id="BF1-AL-gjy"/>
                                     <constraint firstItem="TDQ-Y8-nr5" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="88" id="Bki-Qs-M8h"/>
-                                    <constraint firstItem="4KJ-16-tzf" firstAttribute="leading" secondItem="Rtd-Jc-C7r" secondAttribute="leading" id="DH2-1e-HBh"/>
                                     <constraint firstItem="YPh-lG-hwk" firstAttribute="centerX" secondItem="8Dk-tO-uXe" secondAttribute="centerX" id="Dj9-3q-kow"/>
-                                    <constraint firstAttribute="bottom" secondItem="9E0-4Y-Q79" secondAttribute="bottom" constant="20" id="I6Y-6n-aQn"/>
-                                    <constraint firstItem="TDQ-Y8-nr5" firstAttribute="top" secondItem="8Dk-tO-uXe" secondAttribute="topMargin" id="J5Z-az-fdp"/>
-                                    <constraint firstItem="YPh-lG-hwk" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="17" id="Luo-c7-kd5"/>
-                                    <constraint firstItem="YPh-lG-hwk" firstAttribute="top" secondItem="TDQ-Y8-nr5" secondAttribute="bottom" constant="8" symbolic="YES" id="MPa-tj-DlW"/>
-                                    <constraint firstItem="4KJ-16-tzf" firstAttribute="top" secondItem="ZaM-Uh-d7E" secondAttribute="bottom" constant="19" id="PMh-wV-zau"/>
+                                    <constraint firstItem="K6B-Pc-Dqc" firstAttribute="top" secondItem="Rtd-Jc-C7r" secondAttribute="bottom" constant="10" id="H5o-gi-zCC"/>
+                                    <constraint firstItem="TDQ-Y8-nr5" firstAttribute="top" secondItem="8Dk-tO-uXe" secondAttribute="topMargin" constant="-18" id="J5Z-az-fdp"/>
+                                    <constraint firstItem="YPh-lG-hwk" firstAttribute="top" secondItem="gJT-qf-5Fi" secondAttribute="bottom" constant="10" id="MPa-tj-DlW"/>
+                                    <constraint firstAttribute="bottom" secondItem="9E0-4Y-Q79" secondAttribute="bottom" constant="20" id="OgU-Uf-lzJ"/>
+                                    <constraint firstItem="4KJ-16-tzf" firstAttribute="top" secondItem="ZaM-Uh-d7E" secondAttribute="bottom" constant="10" id="PMh-wV-zau"/>
                                     <constraint firstItem="TDQ-Y8-nr5" firstAttribute="centerX" secondItem="YPh-lG-hwk" secondAttribute="centerX" id="QzF-B7-JHp"/>
-                                    <constraint firstItem="YPh-lG-hwk" firstAttribute="trailing" secondItem="ZaM-Uh-d7E" secondAttribute="trailing" id="aOa-fL-57G"/>
-                                    <constraint firstItem="OLD-W9-pR4" firstAttribute="top" secondItem="N9q-ft-Aux" secondAttribute="bottom" constant="23" id="dNa-9T-iRm"/>
-                                    <constraint firstItem="ZaM-Uh-d7E" firstAttribute="top" secondItem="YPh-lG-hwk" secondAttribute="bottom" constant="19" id="fc5-Ey-a5Q"/>
-                                    <constraint firstItem="Rtd-Jc-C7r" firstAttribute="trailing" secondItem="K6B-Pc-Dqc" secondAttribute="trailing" id="fxp-XO-8hi"/>
-                                    <constraint firstItem="OLD-W9-pR4" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="16" id="hgj-wz-QMT"/>
-                                    <constraint firstItem="YPh-lG-hwk" firstAttribute="leading" secondItem="ZaM-Uh-d7E" secondAttribute="leading" id="huk-pe-QnD"/>
-                                    <constraint firstItem="N9q-ft-Aux" firstAttribute="top" secondItem="Rtd-Jc-C7r" secondAttribute="bottom" constant="25" id="jeP-H3-K3y"/>
+                                    <constraint firstItem="ZaM-Uh-d7E" firstAttribute="centerX" secondItem="8Dk-tO-uXe" secondAttribute="centerX" id="S5l-Jd-LVG"/>
+                                    <constraint firstItem="gJT-qf-5Fi" firstAttribute="top" secondItem="TDQ-Y8-nr5" secondAttribute="bottom" constant="-1" id="VVr-ey-f0D"/>
+                                    <constraint firstItem="K6B-Pc-Dqc" firstAttribute="leading" secondItem="N9q-ft-Aux" secondAttribute="trailing" constant="10" id="VpM-6G-3Lw"/>
+                                    <constraint firstItem="gJT-qf-5Fi" firstAttribute="centerX" secondItem="8Dk-tO-uXe" secondAttribute="centerX" id="aQX-hB-12O"/>
+                                    <constraint firstItem="OLD-W9-pR4" firstAttribute="top" secondItem="N9q-ft-Aux" secondAttribute="bottom" constant="10" id="dNa-9T-iRm"/>
+                                    <constraint firstItem="Rtd-Jc-C7r" firstAttribute="centerX" secondItem="8Dk-tO-uXe" secondAttribute="centerX" id="dWp-uk-KrR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rtd-Jc-C7r" secondAttribute="trailing" constant="15" id="eHM-OX-pOg"/>
+                                    <constraint firstItem="ZaM-Uh-d7E" firstAttribute="top" secondItem="YPh-lG-hwk" secondAttribute="bottom" constant="10" id="fc5-Ey-a5Q"/>
+                                    <constraint firstItem="OLD-W9-pR4" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="15" id="i1T-Df-wJF"/>
+                                    <constraint firstItem="Rtd-Jc-C7r" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="15" id="iFh-Rm-z2h"/>
+                                    <constraint firstItem="N9q-ft-Aux" firstAttribute="top" secondItem="Rtd-Jc-C7r" secondAttribute="bottom" constant="10" id="jeP-H3-K3y"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZaM-Uh-d7E" secondAttribute="trailing" constant="15" id="lmM-ge-zWa"/>
                                     <constraint firstItem="9E0-4Y-Q79" firstAttribute="top" secondItem="OLD-W9-pR4" secondAttribute="bottomMargin" constant="19" id="mOl-ql-Pnc"/>
-                                    <constraint firstItem="ZaM-Uh-d7E" firstAttribute="trailing" secondItem="4KJ-16-tzf" secondAttribute="trailing" id="mUo-y5-VKg"/>
-                                    <constraint firstItem="ZaM-Uh-d7E" firstAttribute="leading" secondItem="4KJ-16-tzf" secondAttribute="leading" id="ngU-9C-inI"/>
-                                    <constraint firstItem="N9q-ft-Aux" firstAttribute="baseline" secondItem="K6B-Pc-Dqc" secondAttribute="baseline" id="qiW-T7-GOz"/>
+                                    <constraint firstAttribute="trailing" secondItem="YPh-lG-hwk" secondAttribute="trailing" constant="15" id="o12-Gz-KsS"/>
+                                    <constraint firstItem="YPh-lG-hwk" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="15" id="ojH-Ln-YYM"/>
+                                    <constraint firstItem="N9q-ft-Aux" firstAttribute="leading" secondItem="8Dk-tO-uXe" secondAttribute="leading" constant="15" id="pBx-HY-dY9"/>
+                                    <constraint firstItem="OLD-W9-pR4" firstAttribute="top" secondItem="K6B-Pc-Dqc" secondAttribute="bottom" constant="10" id="pXf-KJ-Cdd"/>
                                     <constraint firstItem="OLD-W9-pR4" firstAttribute="centerX" secondItem="9E0-4Y-Q79" secondAttribute="centerX" id="s4j-Kd-DMP"/>
-                                    <constraint firstItem="Rtd-Jc-C7r" firstAttribute="top" secondItem="4KJ-16-tzf" secondAttribute="bottom" constant="17" id="u1O-z7-5b3"/>
-                                    <constraint firstAttribute="trailing" secondItem="YPh-lG-hwk" secondAttribute="trailing" constant="18" id="utt-2j-oyd"/>
-                                    <constraint firstItem="Rtd-Jc-C7r" firstAttribute="leading" secondItem="N9q-ft-Aux" secondAttribute="leading" id="xJA-Vn-2Mp"/>
-                                    <constraint firstItem="K6B-Pc-Dqc" firstAttribute="leading" secondItem="N9q-ft-Aux" secondAttribute="trailing" constant="10" id="xYn-N5-i0B"/>
+                                    <constraint firstItem="Rtd-Jc-C7r" firstAttribute="top" secondItem="4KJ-16-tzf" secondAttribute="bottom" constant="10" id="u1O-z7-5b3"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -215,15 +233,16 @@
                         <outlet property="vrBookCover" destination="TDQ-Y8-nr5" id="uwE-xa-izJ"/>
                         <outlet property="vrCategorias" destination="Rtd-Jc-C7r" id="6tR-4p-iIk"/>
                         <outlet property="vrEditora" destination="4KJ-16-tzf" id="kiW-Cj-LVP"/>
+                        <outlet property="vrISBN" destination="gJT-qf-5Fi" id="Bwa-1z-wvb"/>
                         <outlet property="vrNumPaginas" destination="K6B-Pc-Dqc" id="kFn-wY-jMH"/>
                         <outlet property="vrPublicacaoData" destination="N9q-ft-Aux" id="0lc-84-0m6"/>
                         <outlet property="vrSinopse" destination="OLD-W9-pR4" id="yIE-sV-Dl1"/>
-                        <outlet property="vrTitulo" destination="YPh-lG-hwk" id="AZ2-Qa-Sa1"/>
+                        <outlet property="vrTitulo" destination="YPh-lG-hwk" id="41b-Dq-Eb7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8z-BZ-Khn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173.59999999999999" y="495.20239880059972"/>
+            <point key="canvasLocation" x="172.5" y="494.36619718309862"/>
         </scene>
     </scenes>
     <resources>

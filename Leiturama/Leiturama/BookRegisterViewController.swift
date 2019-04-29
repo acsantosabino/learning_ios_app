@@ -13,6 +13,7 @@ import AlamofireImage
 
 class BookRegisterViewController: UIViewController {
 
+    @IBOutlet weak var vrISBN: UITextField!
     @IBOutlet weak var vrBookCover: UIImageView!
     @IBOutlet weak var vrTitulo: UITextField!
     @IBOutlet weak var vrAutores: UITextField!
@@ -30,9 +31,8 @@ class BookRegisterViewController: UIViewController {
         return appDelegate.persistentContainer.viewContext
     }
     
-    func parseJSON() {
-        self.book = Book(context: context)
-        Alamofire.request("https://www.googleapis.com/books/v1/volumes?q=9788580631036+isbn").responseJSON{
+    func parseJSON(_ isbn: String) {
+        Alamofire.request("https://www.googleapis.com/books/v1/volumes?q=\(isbn)+isbn").responseJSON{
             response in
             
             if let json = response.result.value as? [String:Any]
@@ -40,10 +40,6 @@ class BookRegisterViewController: UIViewController {
                 if let items = json["items"] as? [[String:Any]],
                     let volumeInfo = items[0]["volumeInfo"] as? [String:Any] {
                     print(volumeInfo)
-                    if let isbnArray = volumeInfo["industryIdentifiers"] as? [[String:Any]],
-                    let isbn = isbnArray[0]["identifier"] as? String {
-                        self.book.isbn = isbn
-                    }
                     if let titulo = volumeInfo["title"] as? String {
                         self.vrTitulo.text = titulo
                         if let subtitulo = volumeInfo["subtitle"] as? String {
@@ -93,39 +89,8 @@ class BookRegisterViewController: UIViewController {
         }
     }
     
-    func fillView(){
-        print(self.book)
-        
-        if let cover = self.book.cover as? UIImage{
-            vrBookCover.image = cover
-        }
-        if self.book.title != nil{
-            vrTitulo.text = self.book.title
-        }
-        if self.book.author != nil{
-            vrAutores.text = self.book.author
-        }
-        if self.book.publishedDate != nil{
-            vrEditora.text = self.book.publisher
-        }
-        if self.book.categories != nil{
-            vrCategorias.text = self.book.categories
-        }
-        if self.book.publishedDate != nil{
-            vrPublicacaoData.text = self.book.publishedDate
-        }
-        //        if self.book.pageCount != nil{
-        //            vrNumPaginas.text = String(self.book.pageCount)
-        //        }
-        if self.book.sinopse != nil{
-            vrSinopse.text = self.book.sinopse
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Parse Json")
-        parseJSON()
 
         // Do any additional setup after loading the view.
     }
@@ -134,10 +99,17 @@ class BookRegisterViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    @IBAction func handleISBN(_ sender: Any) {
+        if(vrISBN.text!.count == 13){
+            parseJSON(vrISBN.text!)
+        }
+    }
+    
     @IBAction func addBook(_ sender: Any) {
         self.book = Book(context:context)
         
         //PREENCHE OS DADOS DO MODELO
+        book.isbn = vrISBN.text
         book.cover = vrBookCover.image
         book.title = vrTitulo.text
         book.author = vrAutores.text
@@ -146,11 +118,11 @@ class BookRegisterViewController: UIViewController {
         book.publishedDate = vrPublicacaoData.text
         book.pageCount = NSString(string: vrNumPaginas.text!).intValue
         book.sinopse = vrSinopse.text
-        
-        do{
-            try context.save()
-        }
-        catch{}
+        context.insert(book)
+//        do{
+//            try context.insert(book)
+//        }
+//        catch{}
         
         self.dismiss(animated: true, completion: nil)
     }
