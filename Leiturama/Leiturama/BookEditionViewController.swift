@@ -7,24 +7,57 @@
 //
 
 import UIKit
+import CoreData
 
 class BookEditionViewController: UIViewController {
-
+  
+    @IBOutlet weak var vrBookCover: UIImageView!
+    @IBOutlet weak var vrISBN: UITextField!
+    @IBOutlet weak var vrTitulo: UITextField!
+    @IBOutlet weak var vrAutores: UITextField!
+    @IBOutlet weak var vrEditora: UITextField!
+    @IBOutlet weak var vrCategorias: UITextField!
+    @IBOutlet weak var vrPublicacaoData: UITextField!
+    @IBOutlet weak var vrNumPaginas: UITextField!
+    @IBOutlet weak var vrSinopse: UITextView!
+    
+    var index: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func updateBook(){
+        //books = ["Biblia Sagrada", "O impostor que vive em mim"]
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        let fetchRequest =
+            NSFetchRequest<NSFetchRequestResult>(entityName: "Book")
+        //978-0553103540
+        do{
+            let result = try managedContext.fetch(fetchRequest)
+            let bookToUpdate = result[index] as! Book
+            
+        }catch{
+            print("Failed")
+        }
+        
     }
-    */
-
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+

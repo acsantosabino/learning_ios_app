@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Es-GZ-K08">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Es-GZ-K08">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -408,6 +408,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dvG-Gd-UD6"/>
                     </view>
+                    <connections>
+                        <outlet property="vrAutores" destination="eYT-Qh-A2e" id="xDE-RJ-NAG"/>
+                        <outlet property="vrBookCover" destination="oCk-D0-rOG" id="di4-Ai-8Zf"/>
+                        <outlet property="vrCategorias" destination="Uay-dQ-iI9" id="pyl-jR-IA4"/>
+                        <outlet property="vrEditora" destination="lpM-mN-jsy" id="lgn-8i-KED"/>
+                        <outlet property="vrISBN" destination="6xU-fi-7YO" id="wPD-SM-HSu"/>
+                        <outlet property="vrNumPaginas" destination="Krs-F6-D0T" id="2XE-dg-1it"/>
+                        <outlet property="vrPublicacaoData" destination="0pz-uB-2si" id="W8y-M9-7bO"/>
+                        <outlet property="vrSinopse" destination="jTK-Lp-0ff" id="M21-Es-Hdb"/>
+                        <outlet property="vrTitulo" destination="Cv1-lh-YfQ" id="OA3-DO-zjd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PN1-05-K21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
