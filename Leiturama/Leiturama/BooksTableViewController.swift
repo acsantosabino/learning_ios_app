@@ -20,7 +20,7 @@ class BooksTableViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        loadData()
+        refresh()
     }
     
     func loadData(){
