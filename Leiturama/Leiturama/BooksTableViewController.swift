@@ -85,6 +85,7 @@ class BooksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
         print(books[indexPath.row])
+        performSegue(withIdentifier: "segueBookEdition", sender: self)
     }
     
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
