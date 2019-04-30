@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class BookEditionViewController: UIViewController {
+    var book: Book?
   
     @IBOutlet weak var vrBookCover: UIImageView!
     @IBOutlet weak var vrISBN: UITextField!
@@ -27,8 +28,35 @@ class BookEditionViewController: UIViewController {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true        
         // Do any additional setup after loading the view.
+        setBook()
+        vrISBN.text = book?.isbn
+        vrBookCover.image = book?.cover as! UIImage
+        vrTitulo.text = book?.title
+        vrAutores.text = book?.author
+        vrEditora.text = book?.publisher
+        vrCategorias.text = book?.categories
+        vrPublicacaoData.text = book?.publishedDate
+        vrNumPaginas.text = book?.pageCount.description
+        vrSinopse.text = book?.sinopse
     }
     
+    
+    func setBook(){
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        let fetchRequest =
+            NSFetchRequest<NSFetchRequestResult>(entityName: "Book")
+        //978-0553103540
+        do{
+            let result = try managedContext.fetch(fetchRequest)
+            self.book = result[index] as! Book
+        } catch{
+            print("erro")
+        }
+    }
     
     func updateBook(){
         //books = ["Biblia Sagrada", "O impostor que vive em mim"]
@@ -54,9 +82,14 @@ class BookEditionViewController: UIViewController {
             book.sinopse = vrSinopse.text
             do{
                 try managedContext.save()
+                var nvc: UINavigationController =
+                    self.parent as! UINavigationController
+                nvc.popToRootViewController(animated: true)
+                self.tabBarController?.tabBar.isHidden = false
             } catch {
                 print(error)
             }
+            
         }catch{
             print("Failed")
         }
